@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Graphite</Name>
+    <Registry>https://hub.docker.com/r/graphiteapp</Registry>
+    <Repository>graphiteapp/graphite-statsd</Repository>
+    <Github>https://github.com/graphite-project</Github>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/graphite-project/docker-graphite-statsd</Support>
+    <Project/>
+    <Overview>
+        Graphite monitoring server.
+    </Overview>
+    <Category>Monitoring</Category>
+    <WebUI>http://[IP]:[PORT:8077]/</WebUI>
+    <TemplateURL/>
+    <Icon>https://raw.githubusercontent.com/marcelhaerle/unraid-docker-templates/main/images/graphite_icon.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <DateInstalled>1667573109</DateInstalled>
+    <DonateText/>
+    <DonateLink/>
+    <DonateImg/>
+    <MinVer/>
+    <Description></Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>8077</HostPort>
+                <ContainerPort>80</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Data></Data>
+    <Environment/>
+    <Labels/>
+    <Config Name="Web UI" Target="80" Default="8077" Mode="tcp" Description="Web UI Port: 8077" Type="Port" Display="always"
+            Required="true" Mask="false">8077</Config>
+    <Config Name="Carbon receiver - plaintext" Target="2003" Default="2003" Mode="tcp" Description="Carbon receiver plaintext Port: 2003" Type="Port" Display="always"
+            Required="true" Mask="false">2003</Config>
+    <Config Name="Carbon receiver - pickle" Target="2004" Default="2004" Mode="tcp" Description="Carbon receiver pickle Port: 2004" Type="Port" Display="always"
+            Required="true" Mask="false">2003</Config>
+    <Config Name="Carbon aggregator - plaintext" Target="2023" Default="2023" Mode="tcp" Description="Carbon aggregator plaintext Port: 2023" Type="Port" Display="always"
+            Required="true" Mask="false">2023</Config>
+    <Config Name="Carbon aggregator - pickle" Target="2024" Default="2024" Mode="tcp" Description="Carbon aggregator pickle Port: 2024" Type="Port" Display="always"
+            Required="true" Mask="false">2003</Config>
+    <Config Name="Graphite Config Path" Target="/opt/graphite/conf" Default="/mnt/user/appdata/graphite/conf" Mode="rw"
+            Description="Graphite Config Path: /opt/graphite/conf"
+            Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/graphite/conf</Config>
+    <Config Name="Graphite Storage Path" Target="/opt/graphite/storage" Default="/mnt/user/appdata/graphite/storage" Mode="rw"
+            Description="Graphite Storage Path: /opt/graphite/storage"
+            Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/graphite/storage</Config>
+    <Config Name="Statsd Config Path" Target="/opt/statsd/config" Default="/mnt/user/appdata/graphite/statsd/config" Mode="rw"
+            Description="Statsd Config Path: /opt/statsd/config"
+            Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/graphite/statsd/config</Config>
+    <Config Name="Graphite Log Path" Target="/var/log" Default="/mnt/user/appdata/graphite/log" Mode="rw"
+            Description="Graphite Log Path: /var/log"
+            Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/graphite/log</Config>
+</Container>
